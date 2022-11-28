@@ -11,11 +11,12 @@ app.use(express.static('.'));
 const PORT = 3000;
 
 app.get('/', (req, res) => {
-	res.send('Hello World!');
+	res.sendFile(path.join(__dirname, '.', 'index.html'));
 });
 
 app.get('/login', (req, res) => {
 	// TODO
+	res.send('Here will be login window');
 });
 
 app.listen(PORT, function () {
