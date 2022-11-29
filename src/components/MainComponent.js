@@ -1,4 +1,4 @@
-export class MainController {
+export class MainComponent {
 	constructor(parent) {
 		this.parent = parent;
 	}
