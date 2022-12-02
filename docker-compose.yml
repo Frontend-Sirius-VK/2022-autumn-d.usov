@@ -21,7 +21,7 @@ services:
         image: flyway/flyway:9.3.1
         command: -url=jdbc:postgresql://host.docker.internal:${POSTGRES_PORT}/${POSTGRES_DB} -user=${POSTGRES_USER} -password=${POSTGRES_PASSWORD} migrate
         volumes:
-            - ./src/dataBase/migrations:/flyway/sql
+            - ./src/database/migrations:/flyway/sql
         depends_on:
             postgres:
                 condition: service_healthy

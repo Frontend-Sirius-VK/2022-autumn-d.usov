@@ -1,4 +1,4 @@
-INSERT INTO tasks('user_id', header, description)
+INSERT INTO tasks("user_id", header, description)
 values (
         (
             SELECT users.id

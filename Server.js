@@ -1,7 +1,11 @@
 'use strict';
 
+// import { Task } from './src/model/Task.js';
+
 const express = require('express');
 const morgan = require('morgan');
+
+const task = require('./src/model/Task');
 
 const app = express();
 
@@ -12,6 +16,11 @@ const PORT = 3000;
 
 app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, '.', 'index.html'));
+});
+
+app.get('/getAllTasks', async (req, res) => {
+	const result = await task.getAllTasks();
+	res.json(result);
 });
 
 app.get('/login', (req, res) => {
