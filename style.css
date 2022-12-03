@@ -1,0 +1,72 @@
+body {
+	height: 100vh;
+	background: linear-gradient(180deg, #8052ec, #d161ff);
+}
+
+.container {
+	width: 40%;
+	min-width: 400px;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+}
+
+#new-task {
+	position: relative;
+	background: white;
+	padding: 30px 20px;
+	border-radius: 5px;
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+#new-task-inputs {
+	width: 70%;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 14px;
+	padding: 10px 10px 10px 12px;
+	display: grid;
+	margin: 0px;
+}
+
+#new-task-title-input {
+	/* width: 70%; */
+	height: 20px;
+	border-radius: 10px;
+	/* font-family: 'Courier New', Courier, monospace; */
+	/* font-size: 14px; */
+	border: 2px solid gray;
+	font-weight: 500;
+	position: relative;
+	/* padding: 10px 10px 10px 12px; */
+}
+
+#new-task-title-input:focus {
+	outline: none;
+	border-color: #8052ec;
+}
+
+#add-new-task-button {
+	position: relative;
+	float: right;
+	width: 18%;
+	height: 40px;
+	border-radius: 5px;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: 500;
+	font-size: 15px;
+	background-color: #d161ff;
+	border: none;
+	color: white;
+	cursor: pointer;
+}
+
+#tasks {
+	background-color: white;
+	padding: 30px 20px;
+	margin-top: 60px;
+	border-radius: 10px;
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+	width: 100%;
+	position: relative;
+}
