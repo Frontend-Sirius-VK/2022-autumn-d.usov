@@ -1,11 +1,9 @@
 'use strict';
 
-// import { Task } from './src/model/Task.js';
-
 const express = require('express');
 const morgan = require('morgan');
 
-const task = require('./src/model/Task');
+const task = require('./model/Task');
 
 const app = express();
 
