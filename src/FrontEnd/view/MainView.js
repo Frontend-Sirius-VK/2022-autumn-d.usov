@@ -11,21 +11,21 @@ export class MainView {
 		const root = document.querySelector('#root');
 		this.container = document.createElement('div');
 
-		// const headerElement = document.createElement('div');
-		// headerElement.classList.add('header');
-		// this.header = new Header(headerElement);
+		const headerElement = document.createElement('div');
+		headerElement.classList.add('header');
+		this.header = new Header(headerElement);
 
-		// const categoriesElement = document.createElement('div');
-		// this.categories = new Categories(categoriesElement);
+		const categoriesElement = document.createElement('div');
+		this.categories = new Categories(categoriesElement);
 
-		// const carContainer = document.createElement('div');
-		// this.carsCards = new ProductCardsRender(carContainer);
-		// carContainer.append(this.carsCards);
+		const taskContainer = document.createElement('div');
+		this.carsCards = new ProductCardsRender(taskContainer);
+		taskContainer.append(this.carsCards);
 
-		// this.container.append(headerElement, categoriesElement, carContainer);
-		// root.append(this.container);
-		// this.header.render(headerElement);
-		// this.categories.render(categoriesElement);
+		this.container.append(headerElement, categoriesElement, taskContainer);
+		root.append(this.container);
+		this.header.render(headerElement);
+		this.categories.render(categoriesElement);
 	}
 
 	update(data = {}) {

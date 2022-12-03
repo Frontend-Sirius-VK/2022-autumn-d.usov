@@ -1,48 +1,16 @@
-// import { DBConnectionsPG } from '../connection/DBConnectionPG.js';
+import EventBus from '../utils/EventBus.js';
 
-// export class Task {
-// 	async getAllTasks() {
-// 		try {
-// 			const result = await new DBConnectionsPG().getConnections().query(
-// 				'SELECT * FROM tasks'
-// 			);
-// 			return result.rows;
-// 		} catch (error) {
-// 			console.log(error);
-// 		}
-// 	}
-// }
+export class Task {
+	constructor() {
+		this.task = null;
+	}
 
-const dBConnectionsPG = require('../back-end/connection/DBConnectionPG.js');
-
-class Task {
-	async getAllTasks() {
-		try {
-			const result = await dBConnectionsPG
-				.getConnections()
-				.query('SELECT * FROM tasks');
-			return result.rows;
-		} catch (error) {
-			console.log(error);
-		}
+	fetchData() {
+		fetch('/Tasks')
+			.then((response) => response.json())
+			.then((data) => {
+				this.task = data;
+				EventBus.emit('Tasks', data);
+			});
 	}
 }
-
-module.exports = new Task();
-
-
-// export class Task {
-// 	constructor() {
-// 		this.task = null;
-// 	}
-
-// 	fetchData() {
-// 		fetch('/getCarSpec')
-// 			.then((response) => response.json())
-// 			.then((data) => {
-// 				this.task = data;
-
-// 				EventBus.emit('getTask', data);
-// 			});
-// 	}
-// }

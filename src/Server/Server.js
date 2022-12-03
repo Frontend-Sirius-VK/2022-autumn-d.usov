@@ -2,6 +2,7 @@
 
 const express = require('express');
 const morgan = require('morgan');
+const path = require('path');
 
 const task = require('./model/Task');
 
@@ -13,13 +14,13 @@ app.use(express.static('.'));
 const PORT = 3000;
 
 app.get('/', (req, res) => {
-	res.sendFile(path.join(__dirname, '.', 'index.html'));
+	res.sendFile(path.join(__dirname, '.', '../FrontEnd/index.html'));
 });
 
-app.get('/Tasks', async (req, res) => {
-	const result = await task.getAllTasks();
-	res.json(result);
-});
+// app.get('/Tasks', async (req, res) => {
+// 	const result = await task.getAllTasks();
+// 	res.json(result);
+// });
 
 app.get('/login', (req, res) => {
 	// TODO
