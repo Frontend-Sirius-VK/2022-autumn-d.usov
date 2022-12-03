@@ -13,7 +13,7 @@
 // 	}
 // }
 
-const dBConnectionsPG = require('../connection/DBConnectionPG');
+const dBConnectionsPG = require('../back-end/connection/DBConnectionPG.js');
 
 class Task {
 	async getAllTasks() {
@@ -29,3 +29,20 @@ class Task {
 }
 
 module.exports = new Task();
+
+
+// export class Task {
+// 	constructor() {
+// 		this.task = null;
+// 	}
+
+// 	fetchData() {
+// 		fetch('/getCarSpec')
+// 			.then((response) => response.json())
+// 			.then((data) => {
+// 				this.task = data;
+
+// 				EventBus.emit('getTask', data);
+// 			});
+// 	}
+// }

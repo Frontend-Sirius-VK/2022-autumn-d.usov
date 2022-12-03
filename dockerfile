@@ -6,6 +6,6 @@ COPY package.json .
 COPY package-lock.json .
 RUN npm ci
 
-COPY Server.js .
+COPY ./src/Server.js .
 COPY src/ ./src/
 
