@@ -1,6 +1,6 @@
-import { Tasks } from '../Tasks/Tasks.js';
+import { TasksCard } from '../Tasks/TasksCard.js';
 
-export class ProductCardsRender {
+export class TasksCardRender {
 	constructor(parent) {
 		this.parent = parent;
 		this.container = null;
@@ -8,9 +8,9 @@ export class ProductCardsRender {
 
 	render(data) {
 		this.container = document.createElement('div');
-		data.forEach((product) => {
-			const productCard = new Tasks(this.container);
-			productCard.render(product.title, product.description);
+		data.forEach((task) => {
+			const taskCard = new TasksCard(this.container);
+			taskCard.render(task.title, task.description);
 		});
 		this.parent.append(this.container);
 	}

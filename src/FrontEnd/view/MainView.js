@@ -1,38 +1,31 @@
+import { TasksCardRender } from '../components/TasksRender/TasksCardRender.js';
+import EventBus from '../utils/EventBus.js';
+
 export class MainView {
 	constructor() {
-		this.categories = null;
-		this.header = null;
-		this.carsCards = null;
 		this.container = null;
-		EventBus.on('getCarSpec', this.update.bind(this));
+		this.tasks = null;
+
+		EventBus.on('taskCard:got-info', this.update.bind(this));
 	}
 
 	render() {
 		const root = document.querySelector('#root');
 		this.container = document.createElement('div');
+		this.container.classList.add('page-container');
 
-		const headerElement = document.createElement('div');
-		headerElement.classList.add('header');
-		this.header = new Header(headerElement);
+		const task_container = document.createElement('div');
+		task_container.classList.add('tasks');
+		this.tasks = new TasksCardRender(task_container);
 
-		const categoriesElement = document.createElement('div');
-		this.categories = new Categories(categoriesElement);
-
-		const taskContainer = document.createElement('div');
-		this.carsCards = new ProductCardsRender(taskContainer);
-		taskContainer.append(this.carsCards);
-
-		this.container.append(headerElement, categoriesElement, taskContainer);
+		this.container.append(task_container);
 		root.append(this.container);
-		this.header.render(headerElement);
-		this.categories.render(categoriesElement);
 	}
 
 	update(data = {}) {
 		if (!data || !Array.isArray(data) || data.length === 0) {
 			return;
 		}
-
-		this.carsCards.update(data);
+		this.tasks.update(data);
 	}
 }

@@ -13,14 +13,14 @@ app.use(express.static('.'));
 
 const PORT = 3000;
 
-app.get('/', (req, res) => {
-	res.sendFile(path.join(__dirname, '.', '../FrontEnd/index.html'));
+app.get('/', async (req, res) => {
+	res.sendFile(path.join(__dirname, '.', 'index.html'));
 });
 
-// app.get('/Tasks', async (req, res) => {
-// 	const result = await task.getAllTasks();
-// 	res.json(result);
-// });
+app.get('/tasks', async (req, res) => {
+	const result = await task.getAllTasks();
+	res.json(result);
+});
 
 app.get('/login', (req, res) => {
 	// TODO

@@ -1,16 +1,20 @@
 import EventBus from '../utils/EventBus.js';
 
 export class Task {
-	constructor() {
-		this.task = null;
+	constructor(title = null, description = null) {
+		this.title = title;
+		this.description = description;
 	}
 
 	fetchData() {
-		fetch('/Tasks')
+		fetch('/tasks')
 			.then((response) => response.json())
 			.then((data) => {
-				this.task = data;
-				EventBus.emit('Tasks', data);
+				console.log('Tasks ::', data);
+				this.title = data.title;
+				this.description = data.description;
+
+				EventBus.emit('yaskCard:got-info', data);
 			});
 	}
 }

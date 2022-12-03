@@ -6,7 +6,7 @@ export class MainController {
 		const view = new MainView();
 		view.render();
 
-		const task = new Task();
-		task.fetchData();
+		const model = new Task();
+		model.fetchData();
 	}
 }
