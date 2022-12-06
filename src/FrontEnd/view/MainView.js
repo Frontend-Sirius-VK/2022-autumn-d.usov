@@ -1,24 +1,22 @@
-import { TasksCardRender } from '../components/TasksRender/TasksCardRender.js';
+import { TasksCardRender } from '../components/TasksCardRender/TasksCardRender.js';
 import EventBus from '../utils/EventBus.js';
 
 export class MainView {
 	constructor() {
-		this.container = null;
 		this.tasks = null;
 
-		EventBus.on('taskCard:got-info', this.update.bind(this));
+		EventBus.on('tasksCards', this.update.bind(this));
 	}
 
 	render() {
 		const root = document.querySelector('#root');
 		this.container = document.createElement('div');
-		this.container.classList.add('page-container');
 
-		const task_container = document.createElement('div');
-		task_container.classList.add('tasks');
-		this.tasks = new TasksCardRender(task_container);
+		const tasksContainer = document.createElement('div');
+		tasksContainer.classList.add('test');
+		this.tasks = new TasksCardRender(tasksContainer);
 
-		this.container.append(task_container);
+		this.container.append(tasksContainer);
 		root.append(this.container);
 	}
 

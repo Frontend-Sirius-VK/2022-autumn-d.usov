@@ -1,4 +1,5 @@
 'use strict';
+require('dotenv').config();
 
 const express = require('express');
 const morgan = require('morgan');
@@ -10,17 +11,18 @@ const app = express();
 
 app.use(morgan('dev'));
 app.use(express.static('.'));
+app.use(express.json());
 
-const PORT = 3000;
+const PORT = process.env.APP_PORT || 3000;
 
 app.get('/', async (req, res) => {
 	res.sendFile(path.join(__dirname, '.', 'index.html'));
 });
 
-app.get('/tasks', async (req, res) => {
-	const result = await task.getAllTasks();
-	res.json(result);
-});
+// app.get('/tasks', async (req, res) => {
+// 	const result = await task.getAllTasks();
+// 	res.json(result);
+// });
 
 app.get('/login', (req, res) => {
 	// TODO
