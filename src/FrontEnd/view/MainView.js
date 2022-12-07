@@ -5,7 +5,7 @@ export class MainView {
 	constructor() {
 		this.tasks = null;
 
-		EventBus.on('tasksCards', this.update.bind(this));
+		EventBus.on('getTasks', this.update.bind(this));
 	}
 
 	render() {
@@ -13,7 +13,7 @@ export class MainView {
 		this.container = document.createElement('div');
 
 		const tasksContainer = document.createElement('div');
-		tasksContainer.classList.add('test');
+		tasksContainer.classList.add('main-container');
 		this.tasks = new TasksCardRender(tasksContainer);
 
 		this.container.append(tasksContainer);

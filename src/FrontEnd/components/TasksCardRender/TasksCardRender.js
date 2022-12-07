@@ -10,7 +10,7 @@ export class TasksCardRender {
 		this.container = document.createElement('div');
 		data.forEach((task) => {
 			const taskCard = new TasksCard(this.container);
-			taskCard.render(task.title, task.description);
+			taskCard.render(task.header, task.description);
 		});
 		this.parent.append(this.container);
 	}

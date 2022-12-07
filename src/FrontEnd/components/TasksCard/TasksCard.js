@@ -3,29 +3,28 @@ export class TasksCard {
 		this.parent = parent;
 	}
 
-	render(title, description) {
+	render(header, description) {
 		const container = document.createElement('div');
-		container.classList.add('tasksCard');
+		container.classList.add('tasks-cards');
 
-		const taskSpec = document.createElement('div');
+		const tasksCard = document.createElement('ul');
+		tasksCard.classList.add('ul-tasks');
 
-		const headText = document.createElement('div');
-		headText.textContent = title;
-		taskSpec.append(headText);
-		headText.classList.add('task-card-title');
+		const tasksHeader = document.createElement('li');
+		tasksHeader.textContent = header;
 
-		const tasksDescription = document.createElement('div');
+		tasksHeader.classList.add('task-header');
 
-		const specifications = document.createElement('div');
-		specifications.textContent = description;
-		tasksDescription.append(specifications);
-		specifications.classList.add('task-card-spec');
+		// const tasksDescription = document.createElement('div');
+		// tasksDescription.textContent = description;
 
-		tasksDescription.classList.add('task-card-spec-main');
-		taskSpec.classList.add('task-card-text');
-		taskSpec.append(tasksDescription);
+		// tasksDescription.classList.add('task-description');
 
-		container.append(taskSpec);
+		// tasksCard.append(tasksHeader, tasksDescription);
+
+		tasksCard.append(tasksHeader);
+
+		container.append(tasksCard);
 		this.parent.append(container);
 	}
 }

@@ -19,10 +19,10 @@ app.get('/', async (req, res) => {
 	res.sendFile(path.join(__dirname, '.', 'index.html'));
 });
 
-// app.get('/tasks', async (req, res) => {
-// 	const result = await task.getAllTasks();
-// 	res.json(result);
-// });
+app.get('/getTasks', async (req, res) => {
+	const result = await task.getAllTasks();
+	res.json(result);
+});
 
 app.get('/login', (req, res) => {
 	// TODO
