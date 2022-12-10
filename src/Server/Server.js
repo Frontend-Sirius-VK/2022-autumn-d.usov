@@ -15,13 +15,17 @@ app.use(express.json());
 
 const PORT = process.env.APP_PORT || 3000;
 
-app.get('/', async (req, res) => {
+app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, '../FrontEnd/', 'index.html'));
 });
 
-app.get('/getTasks', async (req, res) => {
-	const result = await task.getAllTasks();
-	res.json(result);
+app.get('/Tasks', async (req, res) => {
+	try {
+		const result = await task.getAllTasks();
+		res.json(result);
+	} catch (error) {
+		console.log(error);
+	}
 });
 
 app.get('/login', (req, res) => {

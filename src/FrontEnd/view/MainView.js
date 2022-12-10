@@ -20,10 +20,15 @@ export class MainView {
 		this.tasks = new TasksCardRender(tasksContainer);
 
 		this.container.append(headerContainer, tasksContainer);
-		root.append(this.container);
+
+		if (root !== null) {
+			root.append(this.container);
+		} else {
+			console.log('root is null');
+		}
 	}
 
-	update(data = {}) {
+	update(data = []) {
 		if (!data || !Array.isArray(data) || data.length === 0) {
 			return;
 		}

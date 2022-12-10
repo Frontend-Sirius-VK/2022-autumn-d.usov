@@ -10,7 +10,6 @@ export class TaskData {
 			.then((response) => response.json())
 			.then((data) => {
 				this.products = data;
-				// console.log(data);
 				EventBus.emit('getTasks', data);
 			});
 	}
