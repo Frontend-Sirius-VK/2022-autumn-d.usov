@@ -1,7 +1,18 @@
+@import './components/TasksList/TasksList.css';
+@import './components/TasksCardRender/TasksCardRender.css';
+@import './view/MainView.css';
+
 :root {
 	--main_color: blue;
 }
 
+#root {
+	margin: 0;
+	display: grid;
+	place-items: center;
+}
+
 body {
 	font-family: Arial, sans-serif;
+	background-color: #e5e5e5;
 }

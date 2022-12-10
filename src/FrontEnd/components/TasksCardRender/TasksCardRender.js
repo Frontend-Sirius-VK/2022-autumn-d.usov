@@ -1,4 +1,4 @@
-import { TasksCard } from '../TasksCard/TasksCard.js';
+import { TasksList } from '../TasksList/TasksList.js';
 
 export class TasksCardRender {
 	constructor(parent) {
@@ -8,10 +8,23 @@ export class TasksCardRender {
 
 	render(data) {
 		this.container = document.createElement('div');
+
+		const infoTasksList = document.createElement('div');
+		infoTasksList.classList.add('info-tasks-list');
+
+		const inputCreateNewTask = document.createElement('div');
+		inputCreateNewTask.classList.add('input-create-new-task');
+
+		const tasksList = document.createElement('ul');
+		tasksList.classList.add('tasks-list');
+
+		this.container.append(infoTasksList, inputCreateNewTask, tasksList);
+
 		data.forEach((task) => {
-			const taskCard = new TasksCard(this.container);
+			const taskCard = new TasksList(tasksList);
 			taskCard.render(task.header, task.description);
 		});
+
 		this.parent.append(this.container);
 	}
 

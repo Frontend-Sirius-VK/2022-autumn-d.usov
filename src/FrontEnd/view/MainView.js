@@ -12,11 +12,14 @@ export class MainView {
 		const root = document.querySelector('#root');
 		this.container = document.createElement('div');
 
+		const headerContainer = document.createElement('div');
+		headerContainer.classList.add('main-header-container');
+
 		const tasksContainer = document.createElement('div');
-		tasksContainer.classList.add('main-container');
+		tasksContainer.classList.add('main-tasks-container');
 		this.tasks = new TasksCardRender(tasksContainer);
 
-		this.container.append(tasksContainer);
+		this.container.append(headerContainer, tasksContainer);
 		root.append(this.container);
 	}
 
