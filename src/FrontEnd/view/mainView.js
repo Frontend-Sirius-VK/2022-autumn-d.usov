@@ -1,5 +1,5 @@
-import { TasksCardRender } from '../components/TasksCardRender/TasksCardRender.js';
-import EventBus from '../utils/EventBus.js';
+import { TasksCardRender } from '../components/tasksCardRender/tasksCardRender.js';
+import EventBus from '../utils/eventBus.js';
 
 export class MainView {
 	constructor() {

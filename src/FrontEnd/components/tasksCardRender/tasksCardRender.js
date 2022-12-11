@@ -1,4 +1,4 @@
-import { TasksList } from '../TasksList/TasksList.js';
+import { TasksList } from '../tasksList/tasksList.js';
 
 export class TasksCardRender {
 	constructor(parent) {

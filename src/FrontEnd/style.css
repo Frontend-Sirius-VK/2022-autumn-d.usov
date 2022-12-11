@@ -1,6 +1,6 @@
-@import './components/TasksList/TasksList.css';
-@import './components/TasksCardRender/TasksCardRender.css';
-@import './view/MainView.css';
+@import './components/tasksList/tasksList.css';
+@import './components/tasksCardRender/tasksCardRender.css';
+@import './view/mainView.css';
 
 :root {
 	--main_color: blue;

@@ -1,4 +1,4 @@
-import EventBus from '../utils/EventBus.js';
+import EventBus from '../utils/eventBus.js';
 
 export class TaskData {
 	constructor() {

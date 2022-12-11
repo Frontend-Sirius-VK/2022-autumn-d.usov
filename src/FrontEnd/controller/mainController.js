@@ -1,5 +1,5 @@
-import { MainView } from '../view/MainView.js';
-import { TaskData } from '../model/TaskData.js';
+import { MainView } from '../view/mainView.js';
+import { TaskData } from '../model/taskData.js';
 
 export class MainController {
 	process() {
