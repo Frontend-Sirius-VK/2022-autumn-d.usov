@@ -5,7 +5,7 @@ export class MainView {
 	constructor() {
 		this.tasks = null;
 
-		EventBus.on('getTasks', this.update.bind(this));
+		EventBus.on('Tasks', this.update.bind(this));
 	}
 
 	render() {
