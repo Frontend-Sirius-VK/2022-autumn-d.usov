@@ -1,0 +1,11 @@
+.main-tasks-container {
+	padding: 18px;
+	border: 1px solid #e5e5e5;
+	background-color: #ffffff;
+	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	width: 400px;
+	box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+}
