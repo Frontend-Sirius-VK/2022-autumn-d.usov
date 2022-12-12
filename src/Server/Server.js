@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, '../FrontEnd/', 'index.html'));
 });
 
-app.get('/Tasks', async (req, res) => {
+app.get('/tasks', async (req, res) => {
 	try {
 		const result = await task.getAllTasks();
 		res.json(result);

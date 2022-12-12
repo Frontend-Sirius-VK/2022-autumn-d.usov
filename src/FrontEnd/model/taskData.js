@@ -6,11 +6,11 @@ export class TaskData {
 	}
 
 	fetchData() {
-		fetch('/Tasks')
+		fetch('/tasks')
 			.then((response) => response.json())
 			.then((data) => {
 				this.products = data;
-				EventBus.emit('Tasks', data);
+				EventBus.emit('tasks', data);
 			});
 	}
 }

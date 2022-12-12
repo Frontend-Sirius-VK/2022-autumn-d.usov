@@ -28,12 +28,9 @@
 }
 
 .custom-checkbox-input {
-	/* background-color: initial; */
 	appearance: auto;
 	box-sizing: border-box;
 	margin: 3px 3px 3px 4px;
-	/* padding: initial;
-	border: initial; */
 }
 
 .task-header {
