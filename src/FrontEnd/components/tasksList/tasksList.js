@@ -3,7 +3,7 @@ export class TasksList {
 		this.parent = parent;
 	}
 
-	render(header) {
+	render(id, header, is_done) {
 		const container = document.createElement('div');
 
 		const tasksContainer = document.createElement('li');
@@ -12,23 +12,23 @@ export class TasksList {
 		const taskField = document.createElement('div');
 		taskField.classList.add('task-field');
 
-		const checkbox = document.createElement('div');
-		checkbox.classList.add('check-box');
-
-		const customСheckbox = document.createElement('label');
-		customСheckbox.classList.add('custom-checkbox');
-
 		const customСheckboxInput = document.createElement('input');
 		customСheckboxInput.setAttribute('type', 'checkbox');
+		customСheckboxInput.setAttribute('id', `checkbox-input-${id}`);
 		customСheckboxInput.classList.add('custom-checkbox-input');
 
-		const taskHeader = document.createElement('div');
+		if (is_done) {
+			customСheckboxInput.checked = true;
+		} else {
+			customСheckboxInput.checked = false;
+		}
+
+		const taskHeader = document.createElement('label');
 		taskHeader.textContent = header;
+		taskHeader.setAttribute('for', `checkbox-input-${id}`);
 		taskHeader.classList.add('task-header');
 
-		customСheckbox.append(customСheckboxInput);
-		checkbox.append(customСheckbox);
-		taskField.append(checkbox, taskHeader);
+		taskField.append(customСheckboxInput, taskHeader);
 		tasksContainer.append(taskField);
 		container.append(tasksContainer);
 		this.parent.append(container);

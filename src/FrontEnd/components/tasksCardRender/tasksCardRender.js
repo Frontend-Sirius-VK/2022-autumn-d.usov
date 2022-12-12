@@ -23,7 +23,7 @@ export class TasksCardRender {
 
 			data.forEach((task) => {
 				const taskCard = new TasksList(tasksList);
-				taskCard.render(task.header, task.description);
+				taskCard.render(task.id, task.header, task.is_done);
 			});
 
 			this.parent.append(this.container);

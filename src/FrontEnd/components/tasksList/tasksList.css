@@ -27,13 +27,14 @@
 	position: relative;
 }
 
-.custom-checkbox-input {
+#custom-checkbox-input {
 	appearance: auto;
 	box-sizing: border-box;
 	margin: 3px 3px 3px 4px;
 }
 
 .task-header {
+	cursor: pointer;
 	display: inline-block;
 	color: #005ff9;
 }
