@@ -1,5 +1,5 @@
-INSERT INTO tasks(header)
-values ('вынести мусор'),
-    ('дз'),
-    ('купить в магазине'),
-    ('зал');
+INSERT INTO tasks(header, is_done)
+values ('вынести мусор', false),
+    ('дз', false),
+    ('купить в магазине', false),
+    ('зал', true);

@@ -15,6 +15,11 @@
 	gap: 6px;
 }
 
+.task-field.checked {
+	background-color: #0d6efd;
+	box-shadow: rgb(13 110 253 / 25%) 0px 8px 24px;
+}
+
 .check-box {
 	cursor: pointer;
 	display: flex;
@@ -27,14 +32,23 @@
 	position: relative;
 }
 
-#custom-checkbox-input {
+.custom-checkbox-input {
 	appearance: auto;
 	box-sizing: border-box;
 	margin: 3px 3px 3px 4px;
 }
 
+.custom-checkbox-input.checked {
+	color: #0d6efd;
+	background-color: #0d6efd;
+}
+
 .task-header {
 	cursor: pointer;
 	display: inline-block;
-	color: #005ff9;
+	color: #0d6efd;
+}
+
+.task-header.checked {
+	color: #ffffff;
 }
