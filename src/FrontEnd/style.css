@@ -3,7 +3,16 @@
 @import './view/mainView.css';
 
 :root {
-	--main_color: blue;
+	--main-color: blue;
+	--body-background-color: #e5e5e5;
+	--border-main-tasks-container: #e5e5e5;
+	--background-color-main-tasks-container: #ffffff;
+	--border-task-field: #e5e5e5;
+	--background-color-task-field-checked: #0d6efd;
+	--color-custom-checkbox-input-checked: #0d6efd;
+	--background-color-custom-checkbox-input-checked: #0d6efd;
+	--color-task-header: #0d6efd;
+	--clor-task-header-checked: #ffffff;
 }
 
 #root {
@@ -14,5 +23,5 @@
 
 body {
 	font-family: Arial, sans-serif;
-	background-color: #e5e5e5;
+	background-color: var(--body-background-color);
 }

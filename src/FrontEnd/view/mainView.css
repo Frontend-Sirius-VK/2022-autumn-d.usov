@@ -1,7 +1,7 @@
 .main-tasks-container {
 	padding: 18px;
-	border: 1px solid #e5e5e5;
-	background-color: #ffffff;
+	border: 1px solid var(--border-main-tasks-container);
+	background-color: var(--background-color-main-tasks-container);
 	border-radius: 12px;
 	display: flex;
 	flex-direction: column;
