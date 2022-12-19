@@ -38,10 +38,6 @@ app.put('/taskStatus/:id', async (req, res) => {
 	}
 });
 
-app.get('/login', (req, res) => {
-	// TODO
-	res.send('Here will be login window');
-});
 
 app.listen(PORT, function () {
 	console.log(`Server listening PORT ${PORT}`);
