@@ -5,7 +5,7 @@ class Task {
 		try {
 			const result = await dBConnectionsPG
 				.getConnections()
-				.query('SELECT * FROM tasks');
+				.query('SELECT * FROM tasks order by id');
 			return result.rows;
 		} catch (error) {
 			console.log(error);
@@ -36,7 +36,7 @@ class Task {
 				]);
 			const result = await dBConnectionsPG
 				.getConnections()
-				.query('SELECT * FROM tasks');
+				.query('SELECT * FROM tasks order by id');
 			return result.rows;
 		} catch (error) {
 			console.log(error);

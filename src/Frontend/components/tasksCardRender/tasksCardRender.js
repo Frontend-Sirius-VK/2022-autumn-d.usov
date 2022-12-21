@@ -34,7 +34,7 @@ export class TasksCardRender {
 
 	update(data) {
 		if (this.container) {
-			this.container.innerHTML = '';
+			this.parent.innerHTML = '';
 		}
 		this.render(data);
 	}
