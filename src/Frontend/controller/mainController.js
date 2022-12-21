@@ -9,8 +9,10 @@ export class MainController {
 
 		const taskData = new TaskData();
 		taskData.fetchData();
+	}
 
+	static changeStatus(id) {
 		const taskStatus = new TaskStatusChange();
-		taskStatus.fetchData();
+		taskStatus.fetchData(id);
 	}
 }

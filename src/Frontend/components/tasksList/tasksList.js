@@ -1,3 +1,5 @@
+import { MainController } from '../../controller/mainController.js';
+
 export class TasksList {
 	constructor(parent) {
 		this.parent = parent;
@@ -21,6 +23,11 @@ export class TasksList {
 		taskHeader.textContent = header;
 		taskHeader.setAttribute('for', `checkbox-input-${id}`);
 		taskHeader.classList.add('task-header');
+
+		customСheckboxInput.addEventListener('click', () => {
+			console.log(id);
+			MainController.changeStatus(id);
+		});
 
 		if (is_done) {
 			customСheckboxInput.checked = true;
