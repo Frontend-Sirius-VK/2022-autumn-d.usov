@@ -1,0 +1,40 @@
+.task-container {
+	list-style: none;
+	list-style-type: none;
+	font-size: 17px;
+	margin-bottom: 18px;
+	padding-bottom: 16px;
+}
+
+.task-field {
+	border: 1px solid #e5e5e5;
+	padding: 10px;
+	border-radius: 6px;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.check-box {
+	cursor: pointer;
+	display: flex;
+	height: 20px;
+}
+
+.custom-checkbox {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+}
+
+#custom-checkbox-input {
+	appearance: auto;
+	box-sizing: border-box;
+	margin: 3px 3px 3px 4px;
+}
+
+.task-header {
+	cursor: pointer;
+	display: inline-block;
+	color: #005ff9;
+}
