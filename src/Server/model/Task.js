@@ -28,13 +28,16 @@ class Task {
 			const status = await dBConnectionsPG
 				.getConnections()
 				.query('SELECT is_done FROM tasks WHERE id = $1', [id]);
-			const result = await dBConnectionsPG
+			const tempResult = await dBConnectionsPG
 				.getConnections()
 				.query('UPDATE tasks SET is_done = $1 WHERE id = $2', [
 					!status.rows[0].is_done,
 					id,
 				]);
-			return result.rows[0];
+			const result = await dBConnectionsPG
+				.getConnections()
+				.query('SELECT * FROM tasks');
+			return result.rows;
 		} catch (error) {
 			console.log(error);
 		}

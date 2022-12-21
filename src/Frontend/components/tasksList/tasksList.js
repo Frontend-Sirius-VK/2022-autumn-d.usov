@@ -25,7 +25,6 @@ export class TasksList {
 		taskHeader.classList.add('task-header');
 
 		customСheckboxInput.addEventListener('click', () => {
-			console.log(id);
 			MainController.changeStatus(id);
 		});
 

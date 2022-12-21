@@ -6,7 +6,7 @@ export class TaskData {
 	}
 
 	fetchData() {
-		fetch('/tasks')
+		fetch('/api/tasks')
 			.then((response) => response.json())
 			.then((data) => {
 				this.products = data;

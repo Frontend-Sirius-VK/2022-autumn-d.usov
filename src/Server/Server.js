@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, '../Frontend/', 'index.html'));
 });
 
-app.get('/tasks', async (req, res) => {
+app.get('/api/tasks', async (req, res) => {
 	try {
 		const result = await task.getAllTasks();
 		res.json(result);
@@ -28,17 +28,17 @@ app.get('/tasks', async (req, res) => {
 	}
 });
 
-app.get('/taskStatus/:id', async (req, res) => {
+app.get('/api/taskStatus/:id', async (req, res) => {
 	try {
 		const { id } = req.params;
-		const result = await task.getTaskStatusByID(id);
+		const result = await task.getTaskStatusByID(Number(id));
 		res.json(result);
 	} catch (error) {
 		console.log(error);
 	}
 });
 
-app.put('/taskStatus/:id', async (req, res) => {
+app.post('/api/taskStatus/:id', async (req, res) => {
 	try {
 		const { id } = req.params;
 		const result = await task.switchingStatusTaskByID(Number(id));
@@ -48,7 +48,7 @@ app.put('/taskStatus/:id', async (req, res) => {
 	}
 });
 
-app.get('/task/:id', async (req, res) => {
+app.get('/api/task/:id', async (req, res) => {
 	try {
 		const { id } = req.params;
 		const result = await task.getTaskByID(Number(id));
@@ -58,7 +58,7 @@ app.get('/task/:id', async (req, res) => {
 	}
 });
 
-app.post('/task', async (req, res) => {
+app.post('/api/task', async (req, res) => {
 	try {
 		const { header } = req.body;
 		const result = await task.createTask(String(header));
@@ -68,7 +68,7 @@ app.post('/task', async (req, res) => {
 	}
 });
 
-app.put('/task/:id', async (req, res) => {
+app.put('/api/task/:id', async (req, res) => {
 	try {
 		const { id } = req.params;
 		const { header } = req.body;
@@ -79,7 +79,7 @@ app.put('/task/:id', async (req, res) => {
 	}
 });
 
-app.delete('/task/:id', async (req, res) => {
+app.delete('/api/task/:id', async (req, res) => {
 	try {
 		const { id } = req.params;
 		const result = await task.deleteTask(Number(id));

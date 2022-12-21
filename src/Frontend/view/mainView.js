@@ -6,6 +6,7 @@ export class MainView {
 		this.tasks = null;
 
 		EventBus.on('tasks', this.update.bind(this));
+		EventBus.on('taskStatus', this.update.bind(this));
 	}
 
 	render() {
@@ -29,6 +30,7 @@ export class MainView {
 	}
 
 	update(data = []) {
+		console.log(data);
 		if (!data || !Array.isArray(data) || data.length === 0) {
 			return;
 		}

@@ -6,16 +6,13 @@ export class TaskStatusChange {
 	}
 
 	fetchData(id) {
-		fetch(`/taskStatus/${id}`, {
-			method: 'put',
+		fetch(`/api/taskStatus/${id}`, {
+			method: 'post',
 		})
 			.then((response) => response.json())
 			.then((data) => {
-				this.status = data.is_done;
+				this.products = data;
 				EventBus.emit('taskStatus', data);
-			})
-			.catch((error) => {
-				error.message;
 			});
 	}
 }
