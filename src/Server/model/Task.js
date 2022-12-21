@@ -40,6 +40,16 @@ class Task {
 		}
 	}
 
+	async getTaskStatusByID(id) {
+		try {
+			const status = await dBConnectionsPG
+				.getConnections()
+				.query('SELECT is_done FROM tasks WHERE id = $1', [id]);
+		} catch (error) {
+			console.log(error);
+		}
+	}
+
 	async createTask(header) {
 		try {
 			const result = await dBConnectionsPG

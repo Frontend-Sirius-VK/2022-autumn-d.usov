@@ -28,6 +28,16 @@ app.get('/tasks', async (req, res) => {
 	}
 });
 
+app.get('/taskStatus/:id', async (req, res) => {
+	try {
+		const { id } = req.params;
+		const result = await task.getTaskStatusByID(id);
+		res.json(result);
+	} catch (error) {
+		console.log(error);
+	}
+});
+
 app.put('/taskStatus/:id', async (req, res) => {
 	try {
 		const { id } = req.params;
