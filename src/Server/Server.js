@@ -16,7 +16,7 @@ app.use(express.json());
 const PORT = process.env.APP_PORT || 3000;
 
 app.get('/', (req, res) => {
-	res.sendFile(path.join(__dirname, '../FrontEnd/', 'index.html'));
+	res.sendFile(path.join(__dirname, '../Frontend/', 'index.html'));
 });
 
 app.get('/tasks', async (req, res) => {
@@ -38,6 +38,10 @@ app.put('/taskStatus/:id', async (req, res) => {
 	}
 });
 
+
+app.get('task', async (req, res) => {
+	
+})
 
 app.listen(PORT, function () {
 	console.log(`Server listening PORT ${PORT}`);
