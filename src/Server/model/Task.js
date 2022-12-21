@@ -62,14 +62,14 @@ class Task {
 		}
 	}
 
-	async updateTask(id, header, is_done) {
+	async updateTask(id, header) {
 		try {
 			const result = await dBConnectionsPG
 				.getConnections()
-				.query(
-					'UPDATE tasks SET tasks.header = $1, tasks.is_done = 2$ WHERE tasks.id = $3',
-					[header, is_done, id]
-				);
+				.query('UPDATE tasks SET tasks.header = $1 WHERE tasks.id = $2', [
+					header,
+					id,
+				]);
 			return result.rows[0];
 		} catch (error) {
 			console.log(error);

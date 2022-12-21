@@ -38,10 +38,46 @@ app.put('/taskStatus/:id', async (req, res) => {
 	}
 });
 
+app.get('/task/:id', async (req, res) => {
+	try {
+		const { id } = req.params;
+		const result = await task.getTaskByID(Number(id));
+		res.json(result);
+	} catch (error) {
+		console.log(error);
+	}
+});
 
-app.get('task', async (req, res) => {
-	
-})
+app.post('/task', async (req, res) => {
+	try {
+		const { header } = req.body;
+		const result = await task.createTask(String(header));
+		res.json(result);
+	} catch (error) {
+		console.log(error);
+	}
+});
+
+app.put('/task/:id', async (req, res) => {
+	try {
+		const { id } = req.params;
+		const { header } = req.body;
+		const result = await task.updateTask(Number(id), String(header));
+		res.json(result);
+	} catch (error) {
+		console.log(error);
+	}
+});
+
+app.delete('/task/:id', async (req, res) => {
+	try {
+		const { id } = req.params;
+		const result = await task.deleteTask(Number(id));
+		res.json(result);
+	} catch (error) {
+		console.log(error);
+	}
+});
 
 app.listen(PORT, function () {
 	console.log(`Server listening PORT ${PORT}`);
