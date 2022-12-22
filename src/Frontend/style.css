@@ -1,6 +1,7 @@
 @import './components/tasksList/tasksList.css';
 @import './components/tasksCardRender/tasksCardRender.css';
 @import './components/mainView.css';
+@import './components/loader/loader.css';
 
 :root {
 	--main-color: blue;
@@ -13,6 +14,7 @@
 	--background-color-custom-checkbox-input-checked: #0d6efd;
 	--color-task-header: #0d6efd;
 	--clor-task-header-checked: #ffffff;
+	--loader-background-color: #e5e5e5;
 }
 
 #root {

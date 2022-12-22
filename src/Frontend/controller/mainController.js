@@ -1,6 +1,7 @@
 import { MainView } from '../view/mainView.js';
 import { TaskData } from '../model/taskData.js';
 import { TaskStatusChange } from '../model/taskStatusChange.js';
+import  EventBus  from '../utils/eventBus.js';
 
 export class MainController {
 	process() {
@@ -8,6 +9,7 @@ export class MainController {
 		mainView.render();
 
 		const taskData = new TaskData();
+		EventBus.emit('tasks:loading');
 		taskData.fetchData();
 	}
 

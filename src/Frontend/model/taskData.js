@@ -6,11 +6,13 @@ export class TaskData {
 	}
 
 	fetchData() {
-		fetch('/api/tasks')
-			.then((response) => response.json())
-			.then((data) => {
-				this.products = data;
-				EventBus.emit('tasks', data);
-			});
+		setTimeout(() => {
+			fetch('/api/tasks')
+				.then((response) => response.json())
+				.then((data) => {
+					this.products = data;
+					EventBus.emit('tasks', data);
+				});
+		}, 5000);
 	}
 }
