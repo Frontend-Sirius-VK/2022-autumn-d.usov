@@ -6,6 +6,7 @@ export class MainView {
 		this.tasks = null;
 
 		EventBus.on('tasks', this.update.bind(this));
+		EventBus.on('taskStatus', this.update.bind(this));
 	}
 
 	render() {

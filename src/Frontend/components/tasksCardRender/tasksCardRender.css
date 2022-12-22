@@ -1,0 +1,13 @@
+.tasks-list {
+	margin: 15px;
+	padding: 0 20px 0 20px;
+	border: 2px;
+}
+
+@media (max-width: 1024px), (orientation: portrait) {
+	.tasks-list {
+		margin: 10px;
+		padding: 10px 20px 0px 20px;
+		border: 2px;
+	}
+}

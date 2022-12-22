@@ -1,7 +1,5 @@
 CREATE TABLE tasks (
     id BIGINT generated always as identity primary key,
-    "user_id" BIGINT references users,
-    header text NOT null,
-    description text,
+    header text not null,
     is_done boolean default false
 );

@@ -1,12 +1,24 @@
 import { TasksList } from '../tasksList/tasksList.js';
+import { Loader } from '../loader/loader.js';
+import EventBus from '../../utils/eventBus.js';
 
 export class TasksCardRender {
 	constructor(parent) {
+		const container = document.createElement('div');
 		this.parent = parent;
-		this.container = null;
+		this.container = container;
+
+		EventBus.on('tasks:loading', this.render.bind(this));
 	}
 
 	render(data) {
+		if (!data) {
+			this.container.innerHTML = '';
+			const loader = new Loader(this.container);
+			loader.render();
+			this.parent.prepend(this.container);
+			return;
+		}
 		if (Array.isArray(data)) {
 			this.container = document.createElement('div');
 
@@ -34,7 +46,7 @@ export class TasksCardRender {
 
 	update(data) {
 		if (this.container) {
-			this.container.innerHTML = '';
+			this.parent.innerHTML = '';
 		}
 		this.render(data);
 	}
