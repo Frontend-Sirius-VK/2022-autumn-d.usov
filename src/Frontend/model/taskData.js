@@ -13,6 +13,6 @@ export class TaskData {
 					this.products = data;
 					EventBus.emit('tasks', data);
 				});
-		}, 5000);
+		}, 4500);
 	}
 }
