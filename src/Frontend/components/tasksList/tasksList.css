@@ -52,3 +52,29 @@
 .task-header.checked {
 	color: var(--clor-task-header-checked);
 }
+
+@media (max-width: 1024px) {
+	.task-container {
+		font-size: 28px;
+		height: 100px;
+		margin-bottom: 4%;
+		padding-bottom: 2%;
+	}
+
+	.task-field {
+		border: 1px solid var(--border-task-field);
+		padding: 10px;
+		border-radius: 6px;
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		height: 60px;
+	}
+
+	.custom-checkbox-input {
+		appearance: auto;
+		box-sizing: border-box;
+		margin: 8px 16px 8px 16px;
+		transform: scale(1.75);
+	}
+}
