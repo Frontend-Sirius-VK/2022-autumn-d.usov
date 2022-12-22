@@ -3,6 +3,7 @@ const path = require('path');
 
 module.exports = {
 	entry: './src/Frontend/script.js',
+
 	output: {
 		path: path.resolve(__dirname, './dist'),
 		filename: 'main.js',
@@ -22,6 +23,7 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: './src/Frontend/index.html',
+			favicon: './src/Frontend/sources/images/favicon.png',
 		}),
 	],
 	resolve: {
