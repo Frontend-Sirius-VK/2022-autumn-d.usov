@@ -15,9 +15,6 @@ app.use(express.json());
 
 const PORT = process.env.APP_PORT || 3000;
 
-app.get('/', (req, res) => {
-	res.sendFile(path.join(__dirname, '../Frontend/', 'index.html'));
-});
 
 app.get('/api/tasks', async (req, res) => {
 	try {
