@@ -14,33 +14,33 @@ export class TasksList {
 		const taskField = document.createElement('div');
 		taskField.classList.add('task-field');
 
-		const customСheckboxInput = document.createElement('input');
-		customСheckboxInput.setAttribute('type', 'checkbox');
-		customСheckboxInput.setAttribute('id', `checkbox-input-${id}`);
-		customСheckboxInput.classList.add('custom-checkbox-input');
+		const customCheckboxInput = document.createElement('input');
+		customCheckboxInput.setAttribute('type', 'checkbox');
+		customCheckboxInput.setAttribute('id', `checkbox-input-${id}`);
+		customCheckboxInput.classList.add('custom-checkbox-input');
 
 		const taskHeader = document.createElement('label');
 		taskHeader.textContent = header;
 		taskHeader.setAttribute('for', `checkbox-input-${id}`);
 		taskHeader.classList.add('task-header');
 
-		customСheckboxInput.addEventListener('click', () => {
+		customCheckboxInput.addEventListener('click', () => {
 			MainController.changeStatus(id);
 		});
 
 		if (is_done) {
-			customСheckboxInput.checked = true;
+			customCheckboxInput.checked = true;
 			taskField.classList.add('checked');
-			customСheckboxInput.classList.add('checked');
+			customCheckboxInput.classList.add('checked');
 			taskHeader.classList.add('checked');
 		} else {
-			customСheckboxInput.checked = false;
+			customCheckboxInput.checked = false;
 			taskField.classList.remove('checked');
-			customСheckboxInput.classList.remove('checked');
+			customCheckboxInput.classList.remove('checked');
 			taskHeader.classList.remove('checked');
 		}
 
-		taskField.append(customСheckboxInput, taskHeader);
+		taskField.append(customCheckboxInput, taskHeader);
 		tasksContainer.append(taskField);
 		container.append(tasksContainer);
 		this.parent.append(container);
